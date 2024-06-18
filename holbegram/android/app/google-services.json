@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184190172714",
+    "project_id": "holbegram-6fa50",
+    "storage_bucket": "holbegram-6fa50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184190172714:android:684116bd741af0a5f58d53",
+        "android_client_info": {
+          "package_name": "com.carlos.holbegram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMMnWCveE8rKYmJCU_ATm_C5bk5VSNwsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
