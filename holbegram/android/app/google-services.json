@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:184190172714:android:684116bd741af0a5f58d53",
+        "mobilesdk_app_id": "1:184190172714:android:f3aeae49d2c683b4f58d53",
         "android_client_info": {
-          "package_name": "com.carlos.holbegram"
+          "package_name": "com.example.holbegram"
         }
       },
       "oauth_client": [],
