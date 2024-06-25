@@ -1,8 +1,10 @@
+// login_screen.dart
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:holbegram/screens/signup_screen.dart';
 import 'package:holbegram/widgets/text_field.dart';
+import 'package:holbegram/methods/auth_methods.dart';
 
 class LoginScreen extends StatefulWidget {
   final TextEditingController emailController;
@@ -21,6 +23,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final AuthMethods _authMethods = AuthMethods();
+
   @override
   void initState() {
     super.initState();
@@ -34,6 +38,30 @@ class _LoginScreenState extends State<LoginScreen> {
     widget.emailController.dispose();
     widget.passwordController.dispose();
     super.dispose();
+  }
+
+  void _login() async {
+    String email = widget.emailController.text;
+    String password = widget.passwordController.text;
+
+    String result = await _authMethods.login(email: email, password: password);
+
+    if (result == 'success') {
+      Navigator.pushReplacementNamed(context, '/home');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Login successful'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(result),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
   }
 
   @override
@@ -95,9 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Color.fromARGB(218, 226, 37, 24),
                         ),
                       ),
-                      onPressed: () {
-                        // Handle login logic here
-                      },
+                      onPressed: _login,
                       child: const Text(
                         'Log in',
                         style: TextStyle(color: Colors.white),

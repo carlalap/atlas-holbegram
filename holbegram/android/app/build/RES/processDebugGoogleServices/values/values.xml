@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">184190172714</string>
+    <string name="google_api_key" translatable="false">AIzaSyDMMnWCveE8rKYmJCU_ATm_C5bk5VSNwsU</string>
+    <string name="google_app_id" translatable="false">1:184190172714:android:f3aeae49d2c683b4f58d53</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDMMnWCveE8rKYmJCU_ATm_C5bk5VSNwsU</string>
+    <string name="google_storage_bucket" translatable="false">holbegram-6fa50.appspot.com</string>
+    <string name="project_id" translatable="false">holbegram-6fa50</string>
+</resources>
