@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:holbegram/screens/login_screen.dart';
+import 'package:holbegram/screens/upload_image_screen.dart';
 
 class SignUp extends StatefulWidget {
   final TextEditingController emailController;
@@ -89,7 +90,17 @@ class _SignUpState extends State<SignUp> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Handle sign up logic
+                // Navegar a la página AddPicture pasando los datos de registro
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddPicture(
+                      email: widget.emailController.text,
+                      password: widget.passwordController.text,
+                      username: widget.usernameController.text,
+                    ),
+                  ),
+                );
               },
               child: const Text('Sign Up'),
             ),

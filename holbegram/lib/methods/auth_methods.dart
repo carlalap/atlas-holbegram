@@ -65,4 +65,24 @@ class AuthMethods {
       return e.toString();
     }
   }
+
+  Future<Users?> getUserDetails() async {
+    try {
+      final currentUser = FirebaseAuth.instance.currentUser;
+      if (currentUser != null) {
+        final snapshot = await FirebaseFirestore.instance
+            .collection('users')
+            .doc(currentUser.uid)
+            .get();
+
+        if (snapshot != null) {
+          final user = Users.fromSnap(snapshot);
+          return user;
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+    return null;
+  }
 }
